@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody,
     CardTitle } from 'reactstrap';
 
-    function RenderDish(dish) {
+    function RenderDish({dish}) {
         return(
             <Card>
                 <CardImg top src={dish.image} alt={dish.name} />
@@ -14,7 +14,7 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody,
         );
     }
 
-    const RenderComments = (comments) => {
+    const RenderComments = ({comments}) => {
         return comments.map((cmt) => {
             return (
                 <ul className='list-unstyled'>
@@ -27,7 +27,7 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody,
     }
     
     const DishDetail = (props) => {
-        if ((this.props.dish != null) && (this.props.dish.comments != null))
+        if ((props.dish != null) && (props.dish.comments != null))
         {       
             return (
                 <div className="container"> 
@@ -43,13 +43,13 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody,
                 </div>
             );
         }
-        else if ((this.props.dish != null) && (this.props.dish.comments == null))
+        else if ((props.dish != null) && (props.dish.comments == null))
         {
             return(
                 <div className="container"> 
                     <div className="row">
                         <div  className="col-12 col-md-5 m-1">
-                            {this.renderDish(this.props.dish)}
+                            <RenderDish dish={props.dish}/>
                         </div>
                         <div></div>
                     </div>
