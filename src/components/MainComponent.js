@@ -6,10 +6,6 @@ import Header from './HeaderComponent';
 import DishDetail from './DishdetailComponent';
 import Footer from './FooterComponent';
 import About from './AboutComponent';
-import { COMMENTS } from '../shared/comments';
-import { PROMOTIONS } from '../shared/promotions';
-import { LEADERS } from '../shared/leaders';
-import { DISHES } from '../shared/dishes';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 
